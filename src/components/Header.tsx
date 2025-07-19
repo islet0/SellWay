@@ -365,7 +365,7 @@ const Header = () => {
           <div className="flex items-center justify-between px-6 py-4 border-b border-gray-200">
             <div className="flex items-center space-x-3">
               <img 
-                src="/lovable-uploads/b0719e8e-5968-455e-bb8a-a64baa919bda.png" 
+                src={Icon}
                 alt="SellWay" 
                 className="h-8 w-8 object-contain"
               />
@@ -428,7 +428,7 @@ const Header = () => {
                           )}
                         </>
                       ) : (
-                        <Link
+                        <Link 
                           to={category.path}
                           onClick={() => setMobileMenuOpen(false)}
                           className={`px-3 py-2 rounded-md ${
