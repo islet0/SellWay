@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { useApp } from '../contexts/AppContext';
 import { useToast } from '../hooks/use-toast';
 import LanguageSelector from './LanguageSelector';
-
+import Icon from '/public/SellWay.png';
 const Header = () => {
   const { state, dispatch } = useApp();
   const { toast } = useToast();
@@ -210,7 +210,7 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 mr-10 ">
             <img 
-              src="/public/SellWay.png" 
+              src={Icon}
               alt="SellWay" 
               className="h-[50px] w-[200px] object-contain"
             />
