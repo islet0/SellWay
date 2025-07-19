@@ -1,0 +1,139 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Professional E-commerce Design System - Rich Black/Grey Theme */
+
+@layer base {
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 220 13% 18%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 13% 18%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 13% 18%;
+
+    --primary: 220 13% 18%;  /* rich black */
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 220 9% 95%;  /* light grey */
+    --secondary-foreground: 220 13% 18%;
+
+    --muted: 220 14% 94%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 220 9% 85%;  /* medium grey */
+    --accent-foreground: 220 13% 18%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 220 13% 18%;
+
+    --radius: 0.5rem;
+
+    /* Professional rich black and grey palette */
+    --rich-black: 220 13% 18%;     /* Main brand color */
+    --charcoal: 220 9% 25%;        /* Secondary dark */
+    --slate: 220 9% 46%;           /* Medium grey */
+    --silver: 220 5% 65%;          /* Light grey */
+    --pearl: 220 3% 85%;           /* Very light grey */
+    
+    /* Accent colors */
+    --gold: 45 100% 51%;           /* Luxury accent */
+    --success: 142 76% 36%;
+    --warning: 38 92% 50%;
+    --info: 220 91% 60%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --primary: 220 13% 25%;
+    --secondary: 220 30% 10%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+@layer components {
+  .shop-card {
+    @apply bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2;
+  }
+  
+  .product-card {
+    @apply bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-200 hover:scale-105;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-primary-foreground px-6 py-2 rounded-lg font-medium hover:bg-primary/90 transition-colors;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground px-6 py-2 rounded-lg font-medium hover:bg-secondary/80 transition-colors;
+  }
+
+  .hero-showcase {
+    background: linear-gradient(135deg, hsl(var(--rich-black) / 0.95) 0%, hsl(var(--charcoal) / 0.9) 50%, hsl(var(--rich-black) / 0.95) 100%), 
+                url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  
+  .professional-gradient {
+    background: linear-gradient(135deg, hsl(var(--rich-black)) 0%, hsl(var(--charcoal)) 50%, hsl(var(--slate)) 100%);
+  }
+  
+  .glass-effect {
+    background: hsl(var(--background) / 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid hsl(var(--pearl) / 0.2);
+  }
+}
+
+/* Custom animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-dark {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.4); }
+  50% { box-shadow: 0 0 0 10px rgba(0, 0, 0, 0); }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-dark {
+  animation: pulse-dark 2s infinite;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out forwards;
+}
